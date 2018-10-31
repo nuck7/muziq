@@ -24,7 +24,7 @@ export class SpotifyService {
             'Authorization': 'Bearer ' + spotifyToken 
             })
         };
-        return this.http.get('https://api.spotify.com/v1/search?q=smallpools&type=artist', httpOptions)
+        return this.http.get('https://api.spotify.com/v1/search?q=' + artist + '&type=artist', httpOptions)
         .pipe(
             tap(artists => console.log('fetched artists')),
         )
