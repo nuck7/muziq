@@ -1,0 +1,20 @@
+<form class="example-form">
+  <table>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="artistInput" name="artistInput" placeholder="Artist" value="">
+        </mat-form-field>
+      </td>
+      <td>
+        <div class="button-row">
+          <button (click)="searchArtist(artistInput)" mat-raised-button>Search</button>
+          <button (click)="logInWithSpotify()" mat-raised-button>Login With Spotify</button>
+        </div>
+      </td>
+    </tr>
+  <tr>
+   <app-artist-details *ngIf="artistSearchResult.hasOwnProperty('name')" [artist]="artistSearchResult"></app-artist-details>
+  </tr>
+</table>
+</form>
