@@ -1,26 +1,81 @@
-<mat-card class="example-card">
-  <form class="example-form">
-    <table>
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width">
-            <input matInput [(ngModel)]="artistInput" name="artistInput" placeholder="Artist" value="">
-            <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
-            </mat-autocomplete>
-          </mat-form-field>
-        </td>
-        <td>
-          <div class="button-row">
-            <button (click)="searchArtist(artistInput)" mat-raised-button>Search</button>
-            <button (click)="logInWithSpotify()" mat-raised-button>Login With Spotify</button>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">Search Artists</span>
+      </div>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input [(ngModel)]="artistInput" name="artistInput" placeholder="Name" value="" id="artistInput" type="text"
+                class="validate">
+            </div>
           </div>
-        </td>
-      </tr>
-      <tr>
-        <app-artist-details *ngIf="artistSearchResult.hasOwnProperty('name')" [artist]="artistSearchResult"></app-artist-details>
-      </tr>
-    </table>
-  </form>
+        </form>
+      </div>
 
-</mat-card>
+
+
+      <div class="card-action">
+        <button (click)="searchArtist(artistInput)" class="waves-effect waves-light btn">Search</button>
+        <button (click)="logInWithSpotify()" class="waves-effect waves-light btn">Login With Spotify</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="col s12 m6">
+    <app-artist-details *ngIf="artistSearchResult.hasOwnProperty('name')" [artist]="artistSearchResult"></app-artist-details>
+  </div>
+</div>
+
+
+
+
+<!--
+
+  <mat-card class="example-card">
+    <form class="example-form">
+      <table>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="artistInput" name="artistInput" placeholder="Artist" value="">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </td>
+          <td>
+            <div class="button-row">
+              <button (click)="searchArtist(artistInput)" mat-raised-button>Search</button>
+              <button (click)="logInWithSpotify()" mat-raised-button>Login With Spotify</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          
+        </tr>
+      </table>
+    </form>
+  </mat-card>
+-->
+
+<h1><b> this is carina coding</b></h1>
+<table>
+  <tr>
+    <td>cali pup</td>
+    <td>3 years</td>
+    <td>maltipoo</td>
+  </tr>
+  <tr>
+    <td>duchy girl</td>
+    <td>9 years</td>
+    <td>labradoodle</td>
+  </tr>
+  <tr>
+    <td>emmy</td>
+    <td>11 years</td>
+    <td>who the fuck knows</td>
+  </tr>
+</table>

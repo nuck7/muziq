@@ -1,14 +1,50 @@
-<mat-card class="example-card">
-    <mat-card-header>
+<div class="card blue-grey darken-1">
+  <div class="card-content white-text">
+    <div class="card-image">
+      <img [src]="artist?.image">
+      <span class="card-title">{{artist?.name}}</span>
+    </div>
+    <div class="card-content">
+      <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li *ngIf="artist.popularity" class="tab"><a class="active" href="#popularity">Popularity</a></li>
+        <li *ngIf="artist.genres" class="tab"><a href="#genres; javascript:void(0)">Genres</a></li>
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4 black-text">
+      <div id="popularity">{{ artist?.popularity }}</div>
+      <div id="genres">{{ artist?.genres }}</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  $(document).ready(function(){
+    $('ul.tabs').tabs();
+});
+
+</script>
+<!--
+
+    <mat-card class="example-card">
+      <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{artist?.name}}</mat-card-title>
         <mat-card-subtitle *ngIf="artist.popularity"> Popularity: {{ artist?.popularity }} </mat-card-subtitle>
-        <mat-card-subtitle *ngIf="artist.genres"> Genres:  {{ artist?.genres }} </mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image *ngIf="artist.image" style="height:640; width:640" [src]="artist?.image">
-
-    <mat-tab-group>
+        <mat-card-subtitle *ngIf="artist.genres"> Genres: {{ artist?.genres }} </mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image *ngIf="artist.image" style="height:640; width:640" [src]="artist?.image">
+    
+      <mat-tab-group>
         <mat-tab label="Popularity"> {{ artist?.popularity }} </mat-tab>
         <mat-tab label="Genres"> {{ artist?.genres }} </mat-tab>
-    </mat-tab-group>
-</mat-card>
+      </mat-tab-group>
+    </mat-card>
+
+-->
